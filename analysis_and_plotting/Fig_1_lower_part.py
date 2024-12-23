@@ -86,7 +86,6 @@ delta_T_soil_layers_plus6 = np.array([5.35247425, 5.41100253, 5.5025648,
                                 4.25167636, 2.06164913])
 
 
-met_em_testfile = "/nird/projects/NS9600K/brittsc/xxx/met_em.d03.2019-11-11_12:00:00.nc"
 plotpath = "/nird/projects/NS9600K/brittsc/plots_PGW_paper/"
 
 # layers:
