@@ -3,10 +3,6 @@ import numpy as np
 from netCDF4 import Dataset
 import matplotlib.patches as mpatches
 
-
-lat=60
-lon=55
-
 wrfout_data01 = Dataset("/nird/projects/NS9600K/brittsc/240131_WRF_NYA_T-4_corrected_SST/wrfout_d03_2019-11-11_12:00:00")
 
 acc_rain_00_data01 = wrfout_data01.variables["RAINNC"][144,5:-5,5:-5]
@@ -43,23 +39,6 @@ acc_frozen_data02 = acc_graupel_data02+acc_snow_data02
 acc_rain_domain_data02 = np.average(acc_rain_data02)
 acc_frozen_domain_data02 = np.average(acc_frozen_data02)
 
-
-# wrfout_data03 = Dataset("/nird/projects/NS9600K/brittsc/230916_MY_NYA_191112/wrfout_d03_2019-11-11_12:00:00")
-
-# acc_rain_00_data03 = wrfout_data03.variables["RAINNC"][144,lat,lon]
-# acc_rain_24_data03 = wrfout_data03.variables["RAINNC"][-1,lat,lon]
-# acc_snow_00_data03 = wrfout_data03.variables["SNOWNC"][144,lat,lon]
-# acc_snow_24_data03 = wrfout_data03.variables["SNOWNC"][-1,lat,lon]
-# acc_graupel_00_data03 = wrfout_data03.variables["GRAUPELNC"][144,lat,lon]
-# acc_graupel_24_data03 = wrfout_data03.variables["GRAUPELNC"][-1,lat,lon]
-# acc_hail_00_data03 = wrfout_data03.variables["GRAUPELNC"][144,lat,lon]
-# acc_hail_24_data03 = wrfout_data03.variables["GRAUPELNC"][-1,lat,lon]
-
-# acc_rain_data03 = acc_rain_24_data03-acc_rain_00_data03
-# acc_snow_data03 = acc_snow_24_data03-acc_snow_00_data03
-# acc_graupel_data03 = acc_graupel_24_data03-acc_graupel_00_data03
-# acc_hail_data03 = acc_hail_24_data03-acc_hail_00_data03
-# acc_frozen_data03 = acc_graupel_data03+acc_snow_data03+acc_hail_data03
 
 wrfout_data1 = Dataset("/nird/projects/NS9600K/brittsc/240128_CTRL_corrected_SST/wrfout_d03_2019-11-11_12:00:00")
 
@@ -187,34 +166,7 @@ acc_rain_domain_data7 = np.average(acc_rain_data7)
 acc_frozen_domain_data7 = np.average(acc_frozen_data7)
 
 
-# print(acc_rain_data01,acc_frozen_data01,
-#       acc_rain_data02,acc_frozen_data02,
-#       acc_rain_data1,acc_frozen_data1,
-#       acc_rain_data2,acc_frozen_data2,
-#       acc_rain_data3,acc_frozen_data3,
-#       acc_rain_data4,acc_frozen_data4,
-#       acc_rain_data5,acc_frozen_data5,
-#       acc_rain_data6,acc_frozen_data6)
 
-
-# plt.figure(figsize=(8,3))
-# plt.bar([0.8,1.2,1.8,2.2,2.8,3.2,3.8,4.2,4.8,5.2,5.8,6.2],
-#         [acc_rain_data01,acc_frozen_data01,
-#          acc_rain_data02,acc_frozen_data02,
-#          acc_rain_data03,acc_frozen_data03,
-#          # acc_rain_data1,acc_frozen_data1,
-#          acc_rain_data2,acc_frozen_data2,
-#          acc_rain_data3,acc_frozen_data3,
-#          acc_rain_data4,acc_frozen_data4],
-#          # acc_rain_data5,acc_frozen_data5,
-#          # acc_rain_data6,acc_frozen_data6],
-#         color=['blue','green','blue','green','blue','green','blue','green','blue','green','blue','green'],
-#         width=0.4,
-#         tick_label=["         MY$_\mathrm{def}$","","         MY$_\mathrm{adap}$","",
-#                     # "         Morr$_0$","","         Morr$_1$","",
-#                     "         MY$_\mathrm{CP00}$",'',"         Morr$_1$",'',
-#                     "         Morr$_2$",'',"         Morr$_5$",''])
-#                     # "          NoINP",'',"          MoreINP",''])
                     
 plt.figure(figsize=(8,3))
 plt.bar([0.8,1.2,1.8,2.2,2.8,3.2,3.8,4.2,4.8,5.2,5.8,6.2,6.8,7.2,7.8,8.2,8.8,9.2],
